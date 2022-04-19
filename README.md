@@ -8,3 +8,5 @@ The actual hardware part that gives you the light is based on three TIP120 NPN D
 at a PWM pin from Arduino and a 12V RGB Led Strip which is powered from a 12V supply (same GND!!).
 
 I send a PWM signal to each channel to make a colour game.
+
+The app automatically searches for a free COM port at startup and then connects to it, so you don't need to hardcode anything.
