@@ -1,8 +1,12 @@
 from tkinter import *
 import serial
+import serial.tools.list_ports
 import time
 
-ser=serial.Serial('COM6',baudrate=9600,timeout=0)
+ports=serial.tools.list_ports.comports()
+for port in ports:
+    print(port.name)
+ser=serial.Serial(port.name,baudrate=9600,timeout=0)
 
 root=Tk()
 root.title("RGB GUI")
@@ -151,3 +155,6 @@ Send_Button.grid(row=5, column=0, columnspan=2 )
 root.mainloop()
 
 ser.close()
+
+#if __name__=='__main__':
+  #  main()
